@@ -10,38 +10,46 @@ describe Game do
     end
   end
   context 'players' do
-    it 'starts with two players' do
-      expect(subject.player1.class && subject.player2.class).to be Player
-    end
     it 'player one is allocated the symbol "X"' do
-      expect(subject.player1.symbol).to be :X
+      expect(subject.current_turn.symbol).to be :X
     end
     it 'player two is allocated the symbol "O"' do
-      expect(subject.player2.symbol).to be :O
-    end
-  end
-  context 'board' do
-    it 'has a board' do
-      expect(subject.board.class).to be Board
+      subject.turn(0)
+      expect(subject.current_turn.symbol).to be :O
     end
   end
   context 'turns' do
     it 'starts on player 1\'s turn' do
-      expect(subject.current_turn).to be subject.player1
+      player1 = subject.current_turn
+      expect(subject.current_turn).to be player1
     end
     it 'moves to player 2\'s turn after player 1\'s turn' do
+      player1 = subject.current_turn
       subject.turn(0)
-      expect(subject.current_turn).to be subject.player2
+      expect(subject.current_turn).not_to be player1
     end
   end
   context 'game over' do
     before do
-      9.times do |i|
+      7.times do |i|
         subject.turn(i)
       end
     end
     it 'raises an error when trying to take a turn when the game has ended' do
       expect{subject.turn(0)}.to raise_error("Game over")
+    end
+  end
+  context '#winner' do
+    it 'returns nil if there is no winner yet' do
+      expect(subject.turn(0)).to eq nil
+    end
+    it 'returns the winner' do
+      subject.turn(8)
+      subject.turn(0)
+      subject.turn(3)
+      subject.turn(1)
+      subject.turn(5)
+      expect(subject.turn(2).class).to eq Player
     end
   end
 end
