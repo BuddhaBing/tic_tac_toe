@@ -18,4 +18,16 @@ class Game
     @players.first
   end
 
+  def turn(position)
+    raise "Game over" if game_over?
+    @board.mark_square(current_turn, position)
+    @players.reverse!
+  end
+
+  private
+
+  def game_over?
+    @board.grid.flatten.all?(&:occupied?)
+  end
+
 end

@@ -7,7 +7,8 @@ class Square
     @occupied_by = nil
   end
 
-  def own(player)
+  def claim(player)
+    raise "Square already taken" if occupied?
     @occupied_by = player
   end
 

@@ -13,6 +13,12 @@ class Board
     create_grid
   end
 
+  def mark_square(player, position)
+    @grid.flatten[position].claim(player)
+  end
+
+  private
+
   def create_grid
     GRID_ROWS.times do
       row = []

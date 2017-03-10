@@ -29,9 +29,19 @@ describe Game do
     it 'starts on player 1\'s turn' do
       expect(subject.current_turn).to be subject.player1
     end
-    xit 'moves to player 2\'s turn after player 1\'s turn' do
-      subject.
-      expect(subject.current_turn).to be subject.player1
+    it 'moves to player 2\'s turn after player 1\'s turn' do
+      subject.turn(0)
+      expect(subject.current_turn).to be subject.player2
+    end
+  end
+  context 'game over' do
+    before do
+      9.times do |i|
+        subject.turn(i)
+      end
+    end
+    it 'raises an error when trying to take a turn when the game has ended' do
+      expect{subject.turn(0)}.to raise_error("Game over")
     end
   end
 end
