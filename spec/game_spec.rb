@@ -29,5 +29,9 @@ describe Game do
     it 'starts on player 1\'s turn' do
       expect(subject.current_turn).to be subject.player1
     end
+    xit 'moves to player 2\'s turn after player 1\'s turn' do
+      subject.
+      expect(subject.current_turn).to be subject.player1
+    end
   end
 end
