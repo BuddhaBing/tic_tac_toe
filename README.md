@@ -1,4 +1,7 @@
 # Tic Tac Toe Tech Test
+
+[![codecov](https://codecov.io/gh/treborb/tic_tac_toe/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/tic_tac_toe)
+
 #### Ruby v2.3.3
 ### [Makers Academy] (http://www.makersacademy.com) - Week 10 Solo Practice Tech Test
 
