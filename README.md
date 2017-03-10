@@ -1,5 +1,6 @@
 # Tic Tac Toe Tech Test
 
+[![Build Status](https://travis-ci.org/treborb/tic_tac_toe.svg?branch=master)](https://travis-ci.org/treborb/tic_tac_toe)
 [![codecov](https://codecov.io/gh/treborb/tic_tac_toe/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/tic_tac_toe)
 
 #### Ruby v2.3.3
