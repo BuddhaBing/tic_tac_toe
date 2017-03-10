@@ -3,9 +3,6 @@ require 'square'
 describe Square do
   let(:player) { instance_double "Player" }
   subject { described_class.new(1) }
-  it 'has a position' do
-    expect(subject.position).to be 1
-  end
   context 'is unoccupied' do
     it 'is unoccupied by default' do
       expect(subject.occupied?).to be false

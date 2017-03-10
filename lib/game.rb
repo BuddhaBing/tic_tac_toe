@@ -1,14 +1,13 @@
 require_relative 'board'
-require_relative 'player'
 
 class Game
 
   SYMBOLS = %i{X O}.freeze
+  PLAYER1 = SYMBOLS[0]
+  PLAYER2 = SYMBOLS[1]
 
-  def initialize(player_klass=Player, board_klass=Board)
-    player1 = player_klass.new(SYMBOLS[0])
-    player2 = player_klass.new(SYMBOLS[1])
-    @players = [player1, player2]
+  def initialize(board_klass=Board)
+    @players = [PLAYER1, PLAYER2]
     @board = board_klass.new
   end
 
@@ -28,7 +27,7 @@ class Game
   attr_reader :players, :board
 
   def announce_winner
-    "#{board.check(players).symbol.to_s} wins!"
+    "#{board.check(players).to_s} wins!"
   end
 
   def winner?

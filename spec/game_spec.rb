@@ -11,11 +11,11 @@ describe Game do
   end
   context 'players' do
     it 'player one is allocated the symbol "X"' do
-      expect(subject.current_turn.symbol).to be :X
+      expect(subject.current_turn).to be :X
     end
     it 'player two is allocated the symbol "O"' do
       subject.turn(0)
-      expect(subject.current_turn.symbol).to be :O
+      expect(subject.current_turn).to be :O
     end
   end
   context 'turns' do

@@ -1,6 +1,6 @@
 class Square
 
-  attr_reader :position, :occupied_by
+  attr_reader :occupied_by
 
   def initialize(position)
     @position = position
