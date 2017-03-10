@@ -11,22 +11,11 @@ describe Game do
   end
   context 'players' do
     it 'player one is allocated the symbol "X"' do
-      expect(subject.current_turn).to be :X
+      expect(described_class::PLAYER1).to be :X
     end
     it 'player two is allocated the symbol "O"' do
       subject.turn(0)
-      expect(subject.current_turn).to be :O
-    end
-  end
-  context 'turns' do
-    it 'starts on player 1\'s turn' do
-      player1 = subject.current_turn
-      expect(subject.current_turn).to be player1
-    end
-    it 'moves to player 2\'s turn after player 1\'s turn' do
-      player1 = subject.current_turn
-      subject.turn(0)
-      expect(subject.current_turn).not_to be player1
+      expect(described_class::PLAYER2).to be :O
     end
   end
   context 'game over' do

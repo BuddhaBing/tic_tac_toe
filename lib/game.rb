@@ -11,20 +11,24 @@ class Game
     @board = board_klass.new
   end
 
-  def current_turn
-    players.first
-  end
-
   def turn(position)
     raise "Game over" if game_over?
-    board.mark_square(current_turn, position)
-    players.reverse!
+    board.mark_square(current_player, position)
+    switch_players
     announce_winner if winner?
   end
 
   private
 
   attr_reader :players, :board
+
+  def current_player
+    players.first
+  end
+
+  def switch_players
+    players.reverse!
+  end
 
   def announce_winner
     "#{board.check(players).to_s} wins!"
