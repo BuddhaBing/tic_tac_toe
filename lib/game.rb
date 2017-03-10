@@ -20,19 +20,23 @@ class Game
     raise "Game over" if game_over?
     board.mark_square(current_turn, position)
     players.reverse!
-    winner
+    announce_winner if winner?
   end
 
   private
 
   attr_reader :players, :board
 
-  def winner
-    board.check(players)
+  def announce_winner
+    "#{board.check(players).symbol.to_s} wins!"
+  end
+
+  def winner?
+    board.check(players) != nil
   end
 
   def game_over?
-    board.full? || winner
+    board.full? || winner?
   end
 
 end

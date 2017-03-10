@@ -49,7 +49,7 @@ describe Game do
       subject.turn(3)
       subject.turn(1)
       subject.turn(5)
-      expect(subject.turn(2).class).to eq Player
+      expect(subject.turn(2)).to eq "O wins!"
     end
   end
 end
