@@ -48,7 +48,7 @@ $ irb
 
 #### In the REPL
 ```ruby
-$ require "./lib/tictactoe"
+$ require "./lib/game"
 $ game = Game.new
 $ game.turn(n) # where n is the number of the square (0-8)
 ```
