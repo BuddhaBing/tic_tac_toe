@@ -1,17 +1,20 @@
 # Tic Tac Toe Tech Test
 
-[![Build Status](https://travis-ci.org/treborb/tic_tac_toe.svg?branch=master)](https://travis-ci.org/treborb/tic_tac_toe)
+[![Build Status](https://travis-ci.org/treborb/tic_tac_toe.svg?branch=master)](https://travis-ci.org/treborb/bank_tech_test)
 [![codecov](https://codecov.io/gh/treborb/tic_tac_toe/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/tic_tac_toe)
 
-#### Ruby v2.3.3
 ### [Makers Academy] (http://www.makersacademy.com) - Week 10 Solo Practice Tech Test
 
-## Index
-* [Installation] (#Install)
-* [Rspec Tests] (#Rspec)
-* [Usage] (#Usage)
+## Technologies
+* [Ruby v2.3.3](https://www.ruby-lang.org/en/)
+* [Rspec](http://rspec.info/)
 
-## The brief
+## Jump To
+* [Installation](#install)
+* [Usage](#usage)
+* [Tests](#tests)
+
+## The Brief
 
 The rules of tic-tac-toe are as follows:
 
@@ -25,15 +28,16 @@ The rules of tic-tac-toe are as follows:
 
 Build the business logic for a game of tic tac toe. It should be easy to implement a working game of tic tac toe by combining your code with any user interface, whether web or command line.
 
-## <a id="Install">Installation</a>
+## <a name="install">Installation</a>
 ```
 $ git clone https://github.com/treborb/tic_tac_toe.git
 $ cd tic_tac_toe
-$ rvm 2.3.3
+$ rvm use 2.3.3 --install --binary --fuzzy
 $ gem install bundler
 $ bundle
 ```
-## <a id="Usage">Usage</a>
+
+## <a name="usage">Usage</a>
 
 ### The board
  0 | 1 | 2
@@ -54,7 +58,7 @@ $ game = Game.new
 $ game.turn(n) # where n is the number of the square (0-8)
 ```
 
-## <a id="Rspec">Running the tests</a>
+## <a name="tests">Running the tests</a>
 ```ruby
 $ rspec
 ```
